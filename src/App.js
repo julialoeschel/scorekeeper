@@ -47,7 +47,7 @@ function App() {
 
     navigate("/home");
   }
-  console.log(players);
+
   return (
     <>
       <Routes>
