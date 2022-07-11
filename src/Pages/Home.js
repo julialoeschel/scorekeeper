@@ -13,8 +13,8 @@ export default function Home({
 }) {
   return (
     <>
-      <h1>ScoreKeeper</h1>
-      <h2>{game}</h2>
+      <StyledHeading>ScoreKeeper</StyledHeading>
+      <StyledGameName>{game}</StyledGameName>
       <ListofPlayers>
         {players.map((player) => (
           <Player
@@ -69,4 +69,14 @@ const EndGameButton = styled.button`
   &:hover {
     background-color: lightcoral;
   }
+`;
+
+const StyledHeading = styled.h1`
+  text-align: center;
+  color: lightcoral;
+`;
+
+const StyledGameName = styled.h2`
+  padding: 0 20px;
+  color: lightcoral;
 `;

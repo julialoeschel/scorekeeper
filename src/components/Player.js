@@ -20,7 +20,7 @@ export default function Player({ player, onScoreChange }) {
 }
 
 const ListElement = styled.li`
-  background-color: lightblue;
+  background-color: AliceBlue;
   list-style: none;
   padding: 20px;
   display: grid;
