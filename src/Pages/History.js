@@ -4,23 +4,26 @@ import Navigation from "../components/Navigation";
 export default function History({ historyData }) {
   return (
     <>
-      <h2>History</h2>
+      <StyledHeading>History</StyledHeading>
       {historyData &&
         historyData.map((game) => {
           return (
             <>
               {
                 <>
-                  <h2>{game[0] ? game[0].game : `spiel ohne Namen`}</h2>
-                  <ul>
+                  <StyledGameName>
+                    {game[0] ? game[0].game : `spiel ohne Namen`}
+                  </StyledGameName>
+                  <List>
                     {game.map((player) => {
                       return (
-                        <li key={player.name}>
-                          {player.name} score: {player.score}
-                        </li>
+                        <ListElement key={player.name}>
+                          <Score>{player.name} </Score>{" "}
+                          <Score>score: {player.score}</Score>
+                        </ListElement>
                       );
                     })}
-                  </ul>
+                  </List>
                 </>
               }
             </>
@@ -30,3 +33,26 @@ export default function History({ historyData }) {
     </>
   );
 }
+
+const StyledHeading = styled.h1`
+  text-align: center;
+  color: lightcoral;
+`;
+
+const StyledGameName = styled.h2`
+  padding: 0 40px;
+  color: lightcoral;
+`;
+
+const List = styled.ul`
+  list-style: none;
+  width: 70%;
+`;
+
+const ListElement = styled.li`
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Score = styled.span``;
